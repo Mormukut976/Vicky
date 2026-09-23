@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://bhumikatourandtravels.world/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://bhumikatourandtravels.world/images/toyota-innova.jpg</image:loc>
+      <image:title>Toyota Innova Luxury Cab Jaipur - Bhumika Tour and Travels</image:title>
+      <image:caption>Bhumika Tour and Travels luxury Toyota Innova taxi service in Jaipur Rajasthan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhumikatourandtravels.world/images/khatu-shyam.jpg</image:loc>
+      <image:title>Shri Khatu Shyam Ji Temple Darshan Taxi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhumikatourandtravels.world/images/salasar-balaji.jpg</image:loc>
+      <image:title>Salasar Balaji Temple Tour Taxi from Jaipur</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhumikatourandtravels.world/images/udaipur-lake.jpg</image:loc>
+      <image:title>Udaipur Lake City Tour Innova Cab</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhumikatourandtravels.world/images/jodhpur-fort.jpg</image:loc>
+      <image:title>Jodhpur Blue City Tour Innova Cab</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://bhumikatourandtravels.world/images/jaisalmer-dunes.jpg</image:loc>
+      <image:title>Jaisalmer Desert Safari Tour Taxi</image:title>
+    </image:image>
+  </url>
+</urlset>
