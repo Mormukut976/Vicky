@@ -92,7 +92,7 @@
             width: 100%;
         }
 
-        /* ===== NETLIFY BADGE KILLER (Hides third-party injected badge & drawer) ===== */
+        /* ===== NETLIFY BADGE & DRAWER SUPPRESSION ===== */
         netlify-drawer,
         #netlify-drawer,
         .netlify-drawer,
@@ -101,14 +101,8 @@
         #netlify-badge,
         .netlify-badge,
         [data-netlify-badge],
-        div[id*="netlify"],
-        div[class*="netlify"],
         iframe[src*="netlify"],
-        iframe[title*="Netlify"],
-        a[href*="netlify.com"],
-        a[href*="netlify.app"],
-        div:has(> a[href*="netlify"]),
-        div:has(> iframe[src*="netlify"]) {
+        iframe[title*="Netlify"] {
             display: none !important;
             visibility: hidden !important;
             opacity: 0 !important;
@@ -810,9 +804,17 @@
             overflow: hidden;
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         .calc-inputs {
             padding: 34px 28px;
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         .calc-inputs h3 {
             font-size: 1.55rem;
@@ -826,6 +828,10 @@
         }
         .quick-routes {
             margin-bottom: 20px;
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+            overflow: hidden;
         }
         .quick-routes-label {
             font-size: 0.78rem;
@@ -840,6 +846,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
+            max-width: 100%;
         }
         .route-chip {
             background: #f1f5f9;
@@ -865,6 +872,10 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         .calc-result-header h4 {
             color: #fbbf24;
@@ -1797,7 +1808,18 @@
                 grid-template-columns: 1fr;
             }
             .calc-wrapper {
+                display: flex !important;
+                flex-direction: column !important;
                 grid-template-columns: 1fr;
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+            }
+            .calc-inputs, .calc-result-box {
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
             }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
@@ -1880,24 +1902,80 @@
             .table-responsive-hint {
                 display: block;
             }
+            .quick-routes {
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                overflow: hidden !important;
+            }
             .quick-routes .route-chips {
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                padding-bottom: 6px;
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding-bottom: 8px;
                 -webkit-overflow-scrolling: touch;
                 scrollbar-width: none;
             }
             .quick-routes .route-chips::-webkit-scrollbar {
                 display: none;
             }
+            .trip-type-toggle {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .trip-type-btn {
+                min-width: 0 !important;
+            }
             .calc-inputs {
-                padding: 24px 18px;
+                padding: 24px 16px !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
             }
             .calc-result-box {
-                padding: 24px 18px;
+                padding: 24px 16px !important;
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .calc-price-display {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
             }
             .calc-price-display .price-amount {
                 font-size: 2.4rem;
+            }
+            .price-breakdown {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .price-breakdown li {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                gap: 8px !important;
+            }
+            .price-breakdown li span:first-child {
+                flex-shrink: 0;
+            }
+            .price-breakdown li span.val {
+                text-align: right;
+                word-break: break-word;
+            }
+            .calc-result-box .btn-calc-submit {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
             }
             .contact-info-card, .contact-form-card {
                 padding: 24px 18px;
@@ -3422,31 +3500,27 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Netlify Injected Badge Dynamic Killer
+        // Netlify Injected Badge Dynamic Killer (Safely scoped)
         function removeNetlifyBadge() {
             try {
-                document.querySelectorAll('netlify-drawer, netlify-feedback-widget, iframe, div, a, button').forEach(el => {
-                    const text = (el.innerText || el.textContent || '').trim();
+                // Target known Netlify drawer and badge custom tags
+                document.querySelectorAll('netlify-drawer, netlify-feedback-widget, #netlify-badge, .netlify-badge, iframe[src*="netlify"]').forEach(el => {
+                    el.style.setProperty('display', 'none', 'important');
+                    try { el.remove(); } catch(e){}
+                });
+
+                // Target injected badges at root of body
+                document.querySelectorAll('body > a, body > div').forEach(el => {
+                    const text = (el.innerText || '').trim();
                     const id = (el.id || '').toLowerCase();
                     const cls = (typeof el.className === 'string' ? el.className : '').toLowerCase();
-                    const src = (el.src || '').toLowerCase();
-                    const href = (el.href || '').toLowerCase();
-                    const tag = (el.tagName || '').toLowerCase();
-
                     if (
-                        tag.includes('netlify') ||
                         text.includes('Powered by Netlify') ||
-                        id.includes('netlify') ||
-                        cls.includes('netlify') ||
-                        src.includes('netlify') ||
-                        href.includes('netlify.com') ||
-                        href.includes('netlify.app')
+                        id.includes('netlify-badge') ||
+                        cls.includes('netlify-badge')
                     ) {
-                        if (!el.closest('.logo') && !el.closest('footer') && !el.closest('.mobile-sticky-bar')) {
+                        if (!el.closest('.mobile-sticky-bar') && !el.closest('footer')) {
                             el.style.setProperty('display', 'none', 'important');
-                            el.style.setProperty('visibility', 'hidden', 'important');
-                            el.style.setProperty('opacity', '0', 'important');
-                            el.style.setProperty('pointer-events', 'none', 'important');
                             try { el.remove(); } catch(e){}
                         }
                     }
@@ -3456,7 +3530,7 @@
         removeNetlifyBadge();
         const badgeObserver = new MutationObserver(removeNetlifyBadge);
         badgeObserver.observe(document.documentElement, { childList: true, subtree: true });
-        setInterval(removeNetlifyBadge, 400);
+        setInterval(removeNetlifyBadge, 500);
     </script>
 </body>
 </html>
