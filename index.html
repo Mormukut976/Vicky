@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="netlify-drawer" content="false">
     <title>Bhumika Tour & Travels | Toyota Innova Rajasthan Taxi | Vicky Chawala</title>
-    <meta name="description" content="Bhumika Tour & Travels - Rajasthan's #1 Toyota Innova Taxi Service by Vicky Chawala. Office: S-Block, Ekta Nagar, Keshopura, Jaipur 302021. Toyota Innova, Dzire, Ertiga & Tempo Traveller for Khatu Shyam Ji, Salasar Balaji, Udaipur, Jodhpur, Jaisalmer. Base rate ₹15/km.">
-    <meta name="keywords" content="Bhumika Tour and Travels, Toyota Innova Jaipur, Innova Taxi Rajasthan, Khatu Shyam Ji Innova Cab, Salasar Balaji Taxi, Vicky Chawala Keshopura Jaipur, Ekta Nagar Jaipur Taxi, Rajasthan Tour Packages">
+    <meta name="description" content="Bhumika Tour & Travels - Rajasthan's #1 Toyota Innova Taxi Service by Vicky Chawala. Office: S-Block, Ekta Nagar, Keshopura, Jaipur 302021. Call: +91 73748 31405. Toyota Innova, Dzire, Ertiga & Tempo Traveller for Khatu Shyam Ji, Salasar Balaji, Udaipur, Jodhpur, Jaisalmer. Base rate ₹15/km.">
+    <meta name="keywords" content="Bhumika Tour and Travels, Toyota Innova Jaipur, Innova Taxi Rajasthan, Khatu Shyam Ji Innova Cab, Salasar Balaji Taxi, Vicky Chawala Keshopura Jaipur, Ekta Nagar Jaipur Taxi, Rajasthan Tour Packages, 7374831405">
 
     <!-- Open Graph for Social & WhatsApp Sharing -->
     <meta property="og:title" content="Bhumika Tour & Travels | Toyota Innova Rajasthan Specialist">
-    <meta property="og:description" content="Specialized in Toyota Innova Luxury Taxi. Khatu Shyam Ji, Salasar Balaji, Jaipur, Udaipur, Jodhpur, Jaisalmer. ₹15/km base rate. Owner: Vicky Chawala.">
+    <meta property="og:description" content="Specialized in Toyota Innova Luxury Taxi. Khatu Shyam Ji, Salasar Balaji, Jaipur, Udaipur, Jodhpur, Jaisalmer. ₹15/km base rate. Call/WhatsApp: +91 73748 31405.">
     <meta property="og:image" content="images/toyota-innova.jpg">
     <meta property="og:type" content="website">
 
@@ -89,6 +90,35 @@
             margin: 0 auto;
             padding: 0 20px;
             width: 100%;
+        }
+
+        /* ===== NETLIFY BADGE KILLER (Hides third-party injected badge & drawer) ===== */
+        netlify-drawer,
+        #netlify-drawer,
+        .netlify-drawer,
+        [data-netlify-drawer],
+        netlify-feedback-widget,
+        #netlify-badge,
+        .netlify-badge,
+        [data-netlify-badge],
+        div[id*="netlify"],
+        div[class*="netlify"],
+        iframe[src*="netlify"],
+        iframe[title*="Netlify"],
+        a[href*="netlify.com"],
+        a[href*="netlify.app"],
+        div:has(> a[href*="netlify"]),
+        div:has(> iframe[src*="netlify"]) {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+            width: 0 !important;
+            height: 0 !important;
+            position: absolute !important;
+            left: -99999px !important;
+            top: -99999px !important;
+            z-index: -99999 !important;
         }
 
         /* ===== TOP NOTIFICATION / QUICK BAR ===== */
@@ -565,7 +595,7 @@
             border: 1.5px solid #cbd5e1;
             border-radius: 10px;
             font-family: inherit;
-            font-size: 16px; /* 16px prevents iOS Safari auto-zoom on focus! */
+            font-size: 16px;
             color: var(--dark);
             background: #f8fafc;
             transition: var(--transition);
@@ -806,7 +836,6 @@
             margin-bottom: 8px;
             display: block;
         }
-        /* Mobile horizontal scroll chips */
         .route-chips {
             display: flex;
             flex-wrap: wrap;
@@ -1691,7 +1720,7 @@
             justify-content: center;
             font-size: 1.85rem;
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
-            z-index: 999;
+            z-index: 99999;
             transition: var(--transition);
         }
         .floating-whatsapp:hover {
@@ -1718,7 +1747,7 @@
             visibility: visible;
         }
 
-        /* ===== MOBILE STICKY BAR ===== */
+        /* ===== MOBILE STICKY BAR (Ultra High Z-Index) ===== */
         .mobile-sticky-bar {
             display: none;
             position: fixed;
@@ -1728,25 +1757,27 @@
             background: #ffffff;
             padding: 8px 12px;
             padding-bottom: max(8px, env(safe-area-inset-bottom));
-            box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.12);
-            z-index: 998;
+            box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.15);
+            z-index: 999999 !important;
             border-top: 1px solid var(--border-light);
         }
         .mobile-sticky-inner {
             display: flex;
             gap: 10px;
+            width: 100%;
         }
         .mobile-btn {
             flex: 1;
-            height: 46px;
+            height: 48px;
             border-radius: var(--radius-full);
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         .mobile-btn.call {
             background: var(--dark);
@@ -1849,7 +1880,6 @@
             .table-responsive-hint {
                 display: block;
             }
-            /* Smooth touch scrolling for popular route chips */
             .quick-routes .route-chips {
                 flex-wrap: nowrap;
                 overflow-x: auto;
@@ -1886,10 +1916,10 @@
                 <span><i class="fa-solid fa-tag"></i> Base Fare: ₹15 / km</span>
             </div>
             <div class="top-actions">
-                <a href="tel:+918690123456" class="top-btn" id="topCallBtn">
-                    <i class="fa-solid fa-phone"></i> +91 86901 23456
+                <a href="tel:+917374831405" class="top-btn" id="topCallBtn">
+                    <i class="fa-solid fa-phone"></i> +91 73748 31405
                 </a>
-                <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20taxi%20booking%20ki%20jaankari%20chahiye." target="_blank" class="top-btn whatsapp" id="topWaBtn">
+                <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20taxi%20booking%20ki%20jaankari%20chahiye." target="_blank" class="top-btn whatsapp" id="topWaBtn">
                     <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
                 </a>
             </div>
@@ -1920,10 +1950,10 @@
             </div>
 
             <div class="nav-cta">
-                <a href="tel:+918690123456" class="btn-call" id="navCallBtn">
+                <a href="tel:+917374831405" class="btn-call" id="navCallBtn">
                     <i class="fa-solid fa-phone"></i> Call Vicky
                 </a>
-                <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-whatsapp-nav" id="navWaBtn">
+                <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-whatsapp-nav" id="navWaBtn">
                     <i class="fa-brands fa-whatsapp"></i> Book Innova
                 </a>
             </div>
@@ -1962,10 +1992,10 @@
         </div>
 
         <div class="mobile-drawer-footer">
-            <a href="tel:+918690123456" class="mobile-btn call">
-                <i class="fa-solid fa-phone"></i> Call +91 86901 23456
+            <a href="tel:+917374831405" class="mobile-btn call">
+                <i class="fa-solid fa-phone"></i> Call +91 73748 31405
             </a>
-            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Innova%20book%20karni%20hai." target="_blank" class="mobile-btn whatsapp">
+            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Innova%20book%20karni%20hai." target="_blank" class="mobile-btn whatsapp">
                 <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
             </a>
         </div>
@@ -2042,14 +2072,14 @@
                             <label><i class="fa-solid fa-location-arrow"></i> Destination</label>
                             <select class="form-control" id="heroDrop" onchange="calculateHeroFare()">
                                 <option value="Khatu Shyam Ji" selected>Khatu Shyam Ji (80 km)</option>
-                                <option value="Salasar Balaji">Salasar Balaji (170 km)</option>
                                 <option value="Ajmer / Pushkar">Ajmer / Pushkar (145 km)</option>
-                                <option value="Delhi">Delhi (270 km)</option>
-                                <option value="Udaipur">Udaipur (395 km)</option>
-                                <option value="Jodhpur">Jodhpur (335 km)</option>
-                                <option value="Jaisalmer">Jaisalmer (560 km)</option>
                                 <option value="Ranthambore">Ranthambore (160 km)</option>
+                                <option value="Salasar Balaji">Salasar Balaji (170 km)</option>
+                                <option value="Delhi">Delhi (270 km)</option>
+                                <option value="Jodhpur">Jodhpur (335 km)</option>
+                                <option value="Udaipur">Udaipur (395 km)</option>
                                 <option value="Mount Abu">Mount Abu (495 km)</option>
+                                <option value="Jaisalmer">Jaisalmer (560 km)</option>
                             </select>
                         </div>
                     </div>
@@ -2072,7 +2102,7 @@
 
                     <div class="form-group">
                         <label><i class="fa-solid fa-user"></i> Your Name & Mobile</label>
-                        <input type="text" class="form-control" id="heroNamePhone" placeholder="e.g. Ramesh Kumar - 9876543210" required>
+                        <input type="text" class="form-control" id="heroNamePhone" placeholder="e.g. Ramesh Kumar - 7374831405" required>
                     </div>
 
                     <div style="background:#fdf2f2; border:1.5px solid #fecaca; border-radius:10px; padding:10px 14px; margin-bottom:14px; display:flex; justify-content:space-between; align-items:center;">
@@ -2081,7 +2111,7 @@
                             <div style="font-size:1.45rem; font-weight:900; color:var(--secondary);" id="heroFareDisplay">₹3,520</div>
                         </div>
                         <span style="font-size:0.75rem; background:#fee2e2; color:#991b1b; padding:4px 8px; border-radius:6px; font-weight:700;" id="heroRateRuleText">
-                            ≤160km: Double Rate Rule
+                            &lt;150km: Double Running Rule
                         </span>
                     </div>
 
@@ -2142,20 +2172,20 @@
                 </p>
             </div>
 
-            <!-- PRICING RULE HIGHLIGHT BANNER -->
+            <!-- PRICING RULE HIGHLIGHT BANNER (150 KM THRESHOLD) -->
             <div class="pricing-rule-banner">
                 <div class="rule-item">
                     <div class="rule-icon"><i class="fa-solid fa-tag"></i></div>
                     <div class="rule-text">
-                        <h4>Short Trips (≤ 160 km) One-Way Rule</h4>
-                        <p>160 km se kam ke one-way safar par <strong>double rate (₹30/km base)</strong> lagta hai, kyunki gaadi ko wapas khali aana hota hai (Rajasthan Taxi Association rule ke mutabik).</p>
+                        <h4>Short Trips (&lt; 150 km) One-Way Rule</h4>
+                        <p><strong>150 km se kam</strong> ke one-way safar par <strong>double running (₹30/km base)</strong> lagti hai, kyunki gaadi ko wapas khali aana hota hai (Rajasthan Taxi Association rule ke mutabik).</p>
                     </div>
                 </div>
                 <div class="rule-item">
                     <div class="rule-icon"><i class="fa-solid fa-road"></i></div>
                     <div class="rule-text">
-                        <h4>Long Trips (> 160 km) & Round Trips</h4>
-                        <p>160 km se jyada ke outstation one-way trips par <strong>single-side ₹15/km base</strong> lagta hai. Round trip par dono side ka distance × <strong>₹15/km base</strong> lagta hai.</p>
+                        <h4>Long Trips (≥ 150 km) & Round Trips</h4>
+                        <p><strong>150 km ya usse jyada</strong> ke outstation one-way trips par <strong>single-side ₹15/km base</strong> lagta hai. Round trip par dono side ka distance × <strong>₹15/km base</strong> lagta hai.</p>
                     </div>
                 </div>
             </div>
@@ -2170,13 +2200,13 @@
                         <span class="quick-routes-label">Popular Routes (Swipe to select):</span>
                         <div class="route-chips">
                             <span class="route-chip active" onclick="selectRouteChip('Jaipur', 'Khatu Shyam Ji', 80, this)">Jaipur ➔ Khatu Shyam (80 km)</span>
-                            <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Salasar Balaji', 170, this)">Jaipur ➔ Salasar Balaji (170 km)</span>
                             <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Ajmer / Pushkar', 145, this)">Jaipur ➔ Pushkar (145 km)</span>
-                            <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Delhi', 270, this)">Jaipur ➔ Delhi (270 km)</span>
-                            <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Udaipur', 395, this)">Jaipur ➔ Udaipur (395 km)</span>
-                            <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Jodhpur', 335, this)">Jaipur ➔ Jodhpur (335 km)</span>
-                            <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Jaisalmer', 560, this)">Jaipur ➔ Jaisalmer (560 km)</span>
                             <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Ranthambore', 160, this)">Jaipur ➔ Ranthambore (160 km)</span>
+                            <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Salasar Balaji', 170, this)">Jaipur ➔ Salasar Balaji (170 km)</span>
+                            <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Delhi', 270, this)">Jaipur ➔ Delhi (270 km)</span>
+                            <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Jodhpur', 335, this)">Jaipur ➔ Jodhpur (335 km)</span>
+                            <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Udaipur', 395, this)">Jaipur ➔ Udaipur (395 km)</span>
+                            <span class="route-chip" onclick="selectRouteChip('Jaipur', 'Jaisalmer', 560, this)">Jaipur ➔ Jaisalmer (560 km)</span>
                         </div>
                     </div>
 
@@ -2226,7 +2256,7 @@
                         </div>
 
                         <div class="calc-price-display">
-                            <span class="price-rule-tag" id="appliedRuleTag">≤160 km Rule Applied</span>
+                            <span class="price-rule-tag" id="appliedRuleTag">&lt;150 km Rule Applied</span>
                             <div class="price-amount" id="calcTotalFare">₹3,520</div>
                             <div class="price-unit">Toyota Innova All Inclusive Base Fare</div>
                         </div>
@@ -2267,58 +2297,66 @@
                             <tr>
                                 <td><strong>Jaipur ➔ Khatu Shyam Ji</strong></td>
                                 <td><span class="badge-distance">80 KM</span></td>
-                                <td class="innova-col">₹3,520 <small style="font-size:0.75rem; color:#991b1b; display:block;">(≤160km double rule)</small></td>
+                                <td class="innova-col">₹3,520 <small style="font-size:0.75rem; color:#991b1b; display:block;">(&lt;150km double running)</small></td>
                                 <td class="innova-col">₹3,520 <small style="font-size:0.75rem; color:#16a34a; display:block;">(160km × ₹22)</small></td>
                                 <td class="fare-highlight">₹2,400</td>
-                                <td><a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Khatu%20Shyam%20Ji%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Jaipur ➔ Salasar Balaji</strong></td>
-                                <td><span class="badge-distance">170 KM</span></td>
-                                <td class="innova-col">₹3,740 <small style="font-size:0.75rem; color:#16a34a; display:block;">(>160km single side)</small></td>
-                                <td class="innova-col">₹7,480 <small style="font-size:0.75rem; color:#16a34a; display:block;">(340km × ₹22)</small></td>
-                                <td class="fare-highlight">₹2,550</td>
-                                <td><a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Salasar%20Balaji%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
+                                <td><a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Khatu%20Shyam%20Ji%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
                             </tr>
                             <tr>
                                 <td><strong>Jaipur ➔ Ajmer / Pushkar</strong></td>
                                 <td><span class="badge-distance">145 KM</span></td>
-                                <td class="innova-col">₹6,380 <small style="font-size:0.75rem; color:#991b1b; display:block;">(≤160km double rule)</small></td>
+                                <td class="innova-col">₹6,380 <small style="font-size:0.75rem; color:#991b1b; display:block;">(&lt;150km double running)</small></td>
                                 <td class="innova-col">₹6,380 <small style="font-size:0.75rem; color:#16a34a; display:block;">(290km × ₹22)</small></td>
                                 <td class="fare-highlight">₹4,350</td>
-                                <td><a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Pushkar%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
+                                <td><a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Pushkar%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jaipur ➔ Ranthambore</strong></td>
+                                <td><span class="badge-distance">160 KM</span></td>
+                                <td class="innova-col">₹3,520 <small style="font-size:0.75rem; color:#16a34a; display:block;">(≥150km single side)</small></td>
+                                <td class="innova-col">₹7,040 <small style="font-size:0.75rem; color:#16a34a; display:block;">(320km × ₹22)</small></td>
+                                <td class="fare-highlight">₹2,400</td>
+                                <td><a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Ranthambore%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jaipur ➔ Salasar Balaji</strong></td>
+                                <td><span class="badge-distance">170 KM</span></td>
+                                <td class="innova-col">₹3,740 <small style="font-size:0.75rem; color:#16a34a; display:block;">(≥150km single side)</small></td>
+                                <td class="innova-col">₹7,480 <small style="font-size:0.75rem; color:#16a34a; display:block;">(340km × ₹22)</small></td>
+                                <td class="fare-highlight">₹2,550</td>
+                                <td><a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Salasar%20Balaji%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
                             </tr>
                             <tr>
                                 <td><strong>Jaipur ➔ Delhi / NCR</strong></td>
                                 <td><span class="badge-distance">270 KM</span></td>
-                                <td class="innova-col">₹5,940 <small style="font-size:0.75rem; color:#16a34a; display:block;">(>160km single side)</small></td>
+                                <td class="innova-col">₹5,940 <small style="font-size:0.75rem; color:#16a34a; display:block;">(≥150km single side)</small></td>
                                 <td class="innova-col">₹11,880 <small style="font-size:0.75rem; color:#16a34a; display:block;">(540km × ₹22)</small></td>
                                 <td class="fare-highlight">₹4,050</td>
-                                <td><a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Delhi%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Jaipur ➔ Udaipur</strong></td>
-                                <td><span class="badge-distance">395 KM</span></td>
-                                <td class="innova-col">₹8,690 <small style="font-size:0.75rem; color:#16a34a; display:block;">(>160km single side)</small></td>
-                                <td class="innova-col">₹17,380</td>
-                                <td class="fare-highlight">₹5,925</td>
-                                <td><a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Udaipur%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
+                                <td><a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Delhi%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
                             </tr>
                             <tr>
                                 <td><strong>Jaipur ➔ Jodhpur</strong></td>
                                 <td><span class="badge-distance">335 KM</span></td>
-                                <td class="innova-col">₹7,370 <small style="font-size:0.75rem; color:#16a34a; display:block;">(>160km single side)</small></td>
+                                <td class="innova-col">₹7,370 <small style="font-size:0.75rem; color:#16a34a; display:block;">(≥150km single side)</small></td>
                                 <td class="innova-col">₹14,740</td>
                                 <td class="fare-highlight">₹5,025</td>
-                                <td><a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Jodhpur%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
+                                <td><a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Jodhpur%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Jaipur ➔ Udaipur</strong></td>
+                                <td><span class="badge-distance">395 KM</span></td>
+                                <td class="innova-col">₹8,690 <small style="font-size:0.75rem; color:#16a34a; display:block;">(≥150km single side)</small></td>
+                                <td class="innova-col">₹17,380</td>
+                                <td class="fare-highlight">₹5,925</td>
+                                <td><a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Udaipur%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
                             </tr>
                             <tr>
                                 <td><strong>Jaipur ➔ Jaisalmer</strong></td>
                                 <td><span class="badge-distance">560 KM</span></td>
-                                <td class="innova-col">₹12,320 <small style="font-size:0.75rem; color:#16a34a; display:block;">(>160km single side)</small></td>
+                                <td class="innova-col">₹12,320 <small style="font-size:0.75rem; color:#16a34a; display:block;">(≥150km single side)</small></td>
                                 <td class="innova-col">₹24,640</td>
                                 <td class="fare-highlight">₹8,400</td>
-                                <td><a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Jaisalmer%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
+                                <td><a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%20to%20Jaisalmer%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-book-sm"><i class="fa-brands fa-whatsapp"></i> Book</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -2359,10 +2397,10 @@
                         </div>
 
                         <div class="fleet-btn-group">
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-fleet-book" style="background:linear-gradient(135deg, var(--secondary), #991b1b);">
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="btn-fleet-book" style="background:linear-gradient(135deg, var(--secondary), #991b1b);">
                                 <i class="fa-brands fa-whatsapp"></i> Book Toyota Innova
                             </a>
-                            <a href="tel:+918690123456" class="btn-fleet-call" title="Call Vicky">
+                            <a href="tel:+917374831405" class="btn-fleet-call" title="Call Vicky">
                                 <i class="fa-solid fa-phone"></i>
                             </a>
                         </div>
@@ -2388,10 +2426,10 @@
                         </div>
 
                         <div class="fleet-btn-group">
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Ertiga%20cab%20book%20karni%20hai." target="_blank" class="btn-fleet-book">
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Ertiga%20cab%20book%20karni%20hai." target="_blank" class="btn-fleet-book">
                                 <i class="fa-brands fa-whatsapp"></i> Book Ertiga
                             </a>
-                            <a href="tel:+918690123456" class="btn-fleet-call" title="Call Vicky">
+                            <a href="tel:+917374831405" class="btn-fleet-call" title="Call Vicky">
                                 <i class="fa-solid fa-phone"></i>
                             </a>
                         </div>
@@ -2417,10 +2455,10 @@
                         </div>
 
                         <div class="fleet-btn-group">
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Dzire%20cab%20book%20karni%20hai." target="_blank" class="btn-fleet-book">
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Dzire%20cab%20book%20karni%20hai." target="_blank" class="btn-fleet-book">
                                 <i class="fa-brands fa-whatsapp"></i> Book Dzire
                             </a>
-                            <a href="tel:+918690123456" class="btn-fleet-call" title="Call Vicky">
+                            <a href="tel:+917374831405" class="btn-fleet-call" title="Call Vicky">
                                 <i class="fa-solid fa-phone"></i>
                             </a>
                         </div>
@@ -2446,10 +2484,10 @@
                         </div>
 
                         <div class="fleet-btn-group">
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Tempo%20Traveller%20book%20karna%20hai." target="_blank" class="btn-fleet-book">
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Tempo%20Traveller%20book%20karna%20hai." target="_blank" class="btn-fleet-book">
                                 <i class="fa-brands fa-whatsapp"></i> Book Tempo
                             </a>
-                            <a href="tel:+918690123456" class="btn-fleet-call" title="Call Vicky">
+                            <a href="tel:+917374831405" class="btn-fleet-call" title="Call Vicky">
                                 <i class="fa-solid fa-phone"></i>
                             </a>
                         </div>
@@ -2481,8 +2519,8 @@
                         <h4>Shri Khatu Shyam Ji</h4>
                         <p>Most revered spiritual shrine of Hare Ka Sahara, Baba Shyam. Just 80 km from Jaipur, convenient same-day return Innova darshan.</p>
                         <div class="dest-meta">
-                            <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 80 km from Jaipur</span>
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20Khatu%20Shyam%20Ji%20Toyota%20Innova%20cab%20ki%20details%20bataiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
+                            <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 80 km from Jaipur (&lt;150km)</span>
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20Khatu%20Shyam%20Ji%20Toyota%20Innova%20cab%20ki%20details%20bataiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2497,8 +2535,8 @@
                         <h4>Shri Salasar Balaji</h4>
                         <p>Sacred temple of Lord Hanuman with unique bearded idol. Often combined with Khatu Shyam Ji for a complete divine circuit.</p>
                         <div class="dest-meta">
-                            <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 170 km from Jaipur</span>
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20Salasar%20Balaji%20Toyota%20Innova%20cab%20ki%20details%20bataiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
+                            <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 170 km from Jaipur (≥150km)</span>
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20Salasar%20Balaji%20Toyota%20Innova%20cab%20ki%20details%20bataiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2513,8 +2551,24 @@
                         <h4>Pushkar & Ajmer Sharif</h4>
                         <p>World's rare Brahma Temple, holy Pushkar lake with 52 ghats, desert hills, and Ajmer Sharif Dargah of Khwaja Garib Nawaz.</p>
                         <div class="dest-meta">
-                            <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 145 km from Jaipur</span>
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20Pushkar%20Ajmer%20Toyota%20Innova%20cab%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
+                            <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 145 km from Jaipur (&lt;150km)</span>
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20Pushkar%20Ajmer%20Toyota%20Innova%20cab%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RANTHAMBORE TIGER RESERVE (LOCAL IMAGE) -->
+                <div class="dest-card">
+                    <div class="dest-img-box">
+                        <img src="images/ranthambore.jpg" alt="Royal Bengal Tiger Ranthambore Safari" loading="lazy">
+                        <span class="dest-badge">Wildlife Safari</span>
+                    </div>
+                    <div class="dest-content">
+                        <h4>Ranthambore National Park</h4>
+                        <p>World-renowned Royal Bengal Tiger sanctuary, Ranthambore Fort UNESCO monument, Jeep and Canter jungle safaris.</p>
+                        <div class="dest-meta">
+                            <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 160 km from Jaipur (≥150km)</span>
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20Ranthambore%20Toyota%20Innova%20cab%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2530,7 +2584,7 @@
                         <p>Living golden fort, Patwon Ki Haveli, Sam Sand Dunes desert safari, camel ride, Rajasthani folk dance & tent stay under stars.</p>
                         <div class="dest-meta">
                             <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 560 km from Jaipur</span>
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20Jaisalmer%20tour%20Toyota%20Innova%20taxi%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20Jaisalmer%20tour%20Toyota%20Innova%20taxi%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2546,7 +2600,7 @@
                         <p>World-famous UNESCO heritage site featuring Amer Fort, Hawa Mahal, Jal Mahal, City Palace, and Nahargarh sunset.</p>
                         <div class="dest-meta">
                             <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> Home Location (Jaipur)</span>
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20Jaipur%20sightseeing%20Toyota%20Innova%20cab%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20Jaipur%20sightseeing%20Toyota%20Innova%20cab%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2562,7 +2616,7 @@
                         <p>Venice of the East. Lake Pichola boat ride, majestic City Palace, Jag Mandir, Sajjangarh Monsoon Palace, and Saheliyon Ki Bari.</p>
                         <div class="dest-meta">
                             <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 395 km from Jaipur</span>
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20Udaipur%20Toyota%20Innova%20taxi%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20Udaipur%20Toyota%20Innova%20taxi%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2578,23 +2632,7 @@
                         <p>Colossal Mehrangarh Fort standing tall above blue houses, Jaswant Thada marble cenotaph, and grand Umaid Bhawan Palace.</p>
                         <div class="dest-meta">
                             <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 335 km from Jaipur</span>
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20Jodhpur%20Toyota%20Innova%20cab%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RANTHAMBORE TIGER RESERVE (LOCAL IMAGE) -->
-                <div class="dest-card">
-                    <div class="dest-img-box">
-                        <img src="images/ranthambore.jpg" alt="Royal Bengal Tiger Ranthambore Safari" loading="lazy">
-                        <span class="dest-badge">Wildlife Safari</span>
-                    </div>
-                    <div class="dest-content">
-                        <h4>Ranthambore National Park</h4>
-                        <p>World-renowned Royal Bengal Tiger sanctuary, Ranthambore Fort UNESCO monument, Jeep and Canter jungle safaris.</p>
-                        <div class="dest-meta">
-                            <span class="dest-dist"><i class="fa-solid fa-location-dot"></i> 160 km from Jaipur</span>
-                            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20Ranthambore%20Toyota%20Innova%20cab%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20Jodhpur%20Toyota%20Innova%20cab%20chahiye." target="_blank" class="dest-link">Book Innova <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -2663,7 +2701,7 @@
                             <li><i class="fa-solid fa-check"></i> Return to Jaipur by night (340 km round trip)</li>
                             <li><i class="fa-solid fa-check"></i> Toll tax, driver allowance & fuel all included</li>
                         </ul>
-                        <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Khatu%20Shyam%20aur%20Salasar%20Innova%20package%20book%20karna%20hai." target="_blank" class="btn-package-book">
+                        <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Khatu%20Shyam%20aur%20Salasar%20Innova%20package%20book%20karna%20hai." target="_blank" class="btn-package-book">
                             <i class="fa-brands fa-whatsapp"></i> Book Innova Yatra
                         </a>
                     </div>
@@ -2684,7 +2722,7 @@
                             <li><i class="fa-solid fa-check"></i> Chokhi Dhani ethnic resort drop in evening</li>
                             <li><i class="fa-solid fa-check"></i> Chilled dual AC Toyota Innova with polite driver</li>
                         </ul>
-                        <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%202-day%20Innova%20sightseeing%20package%20chahiye." target="_blank" class="btn-package-book">
+                        <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Jaipur%202-day%20Innova%20sightseeing%20package%20chahiye." target="_blank" class="btn-package-book">
                             <i class="fa-brands fa-whatsapp"></i> Book Jaipur Package
                         </a>
                     </div>
@@ -2705,7 +2743,7 @@
                             <li><i class="fa-solid fa-check"></i> Jaipur full day royal forts & palaces sightseeing</li>
                             <li><i class="fa-solid fa-check"></i> Drop back at Delhi airport / railway station</li>
                         </ul>
-                        <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20Golden%20Triangle%20Innova%20package%20ki%20details%20bataiye." target="_blank" class="btn-package-book">
+                        <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20Golden%20Triangle%20Innova%20package%20ki%20details%20bataiye." target="_blank" class="btn-package-book">
                             <i class="fa-brands fa-whatsapp"></i> Book Golden Triangle
                         </a>
                     </div>
@@ -2833,7 +2871,7 @@
         </div>
     </section>
 
-    <!-- CONTACT & WHATSAPP BOOKING SECTION (WITH EXACT OFFICE ADDRESS) -->
+    <!-- CONTACT & WHATSAPP BOOKING SECTION (WITH EXACT OFFICE ADDRESS & REAL NUMBER) -->
     <section class="section bg-white" id="contact">
         <div class="container">
             <div class="section-header">
@@ -2874,7 +2912,7 @@
                             <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                             <div class="contact-meta">
                                 <h5>Direct Phone / Booking Hotline</h5>
-                                <a href="tel:+918690123456" id="contactCallLink">+91 86901 23456</a>
+                                <a href="tel:+917374831405" id="contactCallLink">+91 73748 31405</a>
                             </div>
                         </li>
 
@@ -2882,7 +2920,7 @@
                             <div class="contact-icon" style="background:#dcfce7; color:#16a34a;"><i class="fa-brands fa-whatsapp"></i></div>
                             <div class="contact-meta">
                                 <h5>WhatsApp Direct Chat</h5>
-                                <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20book%20karni%20hai." target="_blank" style="color:#16a34a;">+91 86901 23456 (24x7 Active)</a>
+                                <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20book%20karni%20hai." target="_blank" style="color:#16a34a;">+91 73748 31405 (24x7 Active)</a>
                             </div>
                         </li>
 
@@ -2992,8 +3030,8 @@
                         Bhumika Tour & Travels is your trusted travel partner for Rajasthan outstation cabs, Toyota Innova rental, Khatu Shyam Ji darshan yatras, and luxury holiday packages.
                     </p>
                     <div style="display:flex; gap:12px;">
-                        <a href="https://wa.me/918690123456" target="_blank" style="width:36px; height:36px; border-radius:50%; background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center;"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="tel:+918690123456" style="width:36px; height:36px; border-radius:50%; background:#3b82f6; color:#fff; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-phone"></i></a>
+                        <a href="https://wa.me/917374831405" target="_blank" style="width:36px; height:36px; border-radius:50%; background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center;"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="tel:+917374831405" style="width:36px; height:36px; border-radius:50%; background:#3b82f6; color:#fff; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-phone"></i></a>
                         <a href="mailto:vickychawla8690@gmail.com" style="width:36px; height:36px; border-radius:50%; background:#ea4335; color:#fff; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
@@ -3039,7 +3077,7 @@
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-phone"></i>
                         <div>
-                            <a href="tel:+918690123456" style="color:#fff; font-weight:600;">+91 86901 23456</a>
+                            <a href="tel:+917374831405" style="color:#fff; font-weight:600;">+91 73748 31405</a>
                         </div>
                     </div>
                     <div class="footer-contact-item">
@@ -3054,25 +3092,25 @@
             <div class="footer-bottom">
                 <p>© 2025 Bhumika Tour & Travels. All Rights Reserved. | Owner: Vicky Chawala</p>
                 <p style="color:#64748b;">
-                    Office: S-Block, Ekta Nagar, Keshopura, Jaipur - 302021 • Specialized in Toyota Innova
+                    Office: S-Block, Ekta Nagar, Keshopura, Jaipur - 302021 • Call: +91 73748 31405 • Specialized in Toyota Innova
                 </p>
             </div>
         </div>
     </footer>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20taxi%20booking%20ki%20jaankari%20chahiye." target="_blank" class="floating-whatsapp" id="floatingWaBtn" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20taxi%20booking%20ki%20jaankari%20chahiye." target="_blank" class="floating-whatsapp" id="floatingWaBtn" aria-label="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
         <span class="tooltip">Chat with Vicky Chawala</span>
     </a>
 
-    <!-- MOBILE STICKY CALL / WHATSAPP BAR -->
+    <!-- MOBILE STICKY CALL / WHATSAPP BAR (Always on Top) -->
     <div class="mobile-sticky-bar">
         <div class="mobile-sticky-inner">
-            <a href="tel:+918690123456" class="mobile-btn call" id="mobileStickyCall">
+            <a href="tel:+917374831405" class="mobile-btn call" id="mobileStickyCall">
                 <i class="fa-solid fa-phone"></i> Call Vicky
             </a>
-            <a href="https://wa.me/918690123456?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="mobile-btn whatsapp" id="mobileStickyWa">
+            <a href="https://wa.me/917374831405?text=Namaste%20Vicky%20Bhai,%20mujhe%20Toyota%20Innova%20book%20karni%20hai." target="_blank" class="mobile-btn whatsapp" id="mobileStickyWa">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp Booking
             </a>
         </div>
@@ -3080,18 +3118,17 @@
 
     <!-- ===== JAVASCRIPT LOGIC ===== -->
     <script>
-        // CONFIGURATION - Easily customize phone & contact details
+        // CONFIGURATION - Official Vicky Chawala Contact & Pricing Rules
         const TRAVEL_CONFIG = {
             ownerName: "Vicky Chawala",
             officeAddress: "S-Block, Ekta Nagar, Keshopura, Jaipur, Rajasthan - 302021",
             email: "vickychawla8690@gmail.com",
-            phoneDisplay: "+91 86901 23456",
-            // WhatsApp 10/12 digit format without '+' or spaces
-            whatsappNumber: "918690123456",
+            phoneDisplay: "+91 73748 31405",
+            whatsappNumber: "917374831405", // Vicky's 10-digit number
             rates: {
                 basePerKm: 15,          // Base Rate per km (Dzire)
-                shortTripThreshold: 160,// km limit for double rate on one-way
-                shortTripDoubleRate: 30,// ₹30 / km for one-way <= 160km
+                shortTripThreshold: 150,// Under 150km: Double running rule
+                shortTripDoubleRate: 30,// ₹30 / km for one-way < 150km
                 carMultipliers: {
                     innova: { name: "Toyota Innova (7+1)", mult: 1.47, base: 22, short: 44 },
                     dzire: { name: "Maruti Dzire (4+1)", mult: 1.0, base: 15, short: 30 },
@@ -3108,14 +3145,14 @@
         // Predefined route distances from Jaipur
         const ROUTE_DISTANCES = {
             "Khatu Shyam Ji": 80,
-            "Salasar Balaji": 170,
             "Ajmer / Pushkar": 145,
-            "Delhi": 270,
-            "Udaipur": 395,
-            "Jodhpur": 335,
-            "Jaisalmer": 560,
             "Ranthambore": 160,
-            "Mount Abu": 495
+            "Salasar Balaji": 170,
+            "Delhi": 270,
+            "Jodhpur": 335,
+            "Udaipur": 395,
+            "Mount Abu": 495,
+            "Jaisalmer": 560
         };
 
         // Setup today's date as min date for pickers
@@ -3138,6 +3175,9 @@
 
             // Fetch live weather data
             fetchRajasthanWeather();
+
+            // Run Netlify badge remover
+            removeNetlifyBadge();
         });
 
         // Hero Trip Type Switch
@@ -3155,7 +3195,7 @@
             calculateHeroFare();
         }
 
-        // Hero Fare Calculation logic
+        // Hero Fare Calculation logic (< 150km rule)
         function calculateHeroFare() {
             const drop = document.getElementById('heroDrop').value;
             const carKey = document.getElementById('heroCar').value;
@@ -3166,14 +3206,14 @@
             let ruleText = "";
 
             if (heroTripType === 'oneway') {
-                if (dist <= TRAVEL_CONFIG.rates.shortTripThreshold) {
-                    // Under or equal to 160km: double rate
+                if (dist < TRAVEL_CONFIG.rates.shortTripThreshold) {
+                    // Under 150km: double running
                     totalFare = Math.round(dist * carInfo.short);
-                    ruleText = `≤160km: Double Rate Rule`;
+                    ruleText = `<150km: Double Running`;
                 } else {
-                    // Over 160km: single side
+                    // 150km and above: single side
                     totalFare = Math.round(dist * carInfo.base);
-                    ruleText = `>160km: Single Side Rate`;
+                    ruleText = `≥150km: Single Side Rate`;
                 }
             } else {
                 // Round trip: distance x 2 x base rate
@@ -3237,7 +3277,7 @@
             runFareCalculation();
         }
 
-        // Core Fare Calculator Engine
+        // Core Fare Calculator Engine (< 150km rule)
         function runFareCalculation() {
             const origin = document.getElementById('calcOrigin').value || 'Jaipur';
             const dest = document.getElementById('calcDest').value || 'Destination';
@@ -3252,16 +3292,16 @@
 
             if (calcTripType === 'oneway') {
                 billedKm = dist;
-                if (dist <= TRAVEL_CONFIG.rates.shortTripThreshold) {
-                    // <= 160km: double rate
+                if (dist < TRAVEL_CONFIG.rates.shortTripThreshold) {
+                    // Under 150km: double running
                     effectiveRate = carInfo.short;
                     totalFare = Math.round(dist * effectiveRate);
-                    ruleBadge = `≤ 160 km Rule Applied (Double Rate: ₹${effectiveRate}/km)`;
+                    ruleBadge = `< 150 km Double Running Applied (₹${effectiveRate}/km)`;
                 } else {
-                    // > 160km: single side rate
+                    // 150km and above: single side rate
                     effectiveRate = carInfo.base;
                     totalFare = Math.round(dist * effectiveRate);
-                    ruleBadge = `> 160 km Single-Side Rule (₹${effectiveRate}/km)`;
+                    ruleBadge = `≥ 150 km Single-Side Rule (₹${effectiveRate}/km)`;
                 }
             } else {
                 // Round trip
@@ -3381,6 +3421,42 @@
             document.getElementById('mobileDrawerOverlay').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+
+        // Netlify Injected Badge Dynamic Killer
+        function removeNetlifyBadge() {
+            try {
+                document.querySelectorAll('netlify-drawer, netlify-feedback-widget, iframe, div, a, button').forEach(el => {
+                    const text = (el.innerText || el.textContent || '').trim();
+                    const id = (el.id || '').toLowerCase();
+                    const cls = (typeof el.className === 'string' ? el.className : '').toLowerCase();
+                    const src = (el.src || '').toLowerCase();
+                    const href = (el.href || '').toLowerCase();
+                    const tag = (el.tagName || '').toLowerCase();
+
+                    if (
+                        tag.includes('netlify') ||
+                        text.includes('Powered by Netlify') ||
+                        id.includes('netlify') ||
+                        cls.includes('netlify') ||
+                        src.includes('netlify') ||
+                        href.includes('netlify.com') ||
+                        href.includes('netlify.app')
+                    ) {
+                        if (!el.closest('.logo') && !el.closest('footer') && !el.closest('.mobile-sticky-bar')) {
+                            el.style.setProperty('display', 'none', 'important');
+                            el.style.setProperty('visibility', 'hidden', 'important');
+                            el.style.setProperty('opacity', '0', 'important');
+                            el.style.setProperty('pointer-events', 'none', 'important');
+                            try { el.remove(); } catch(e){}
+                        }
+                    }
+                });
+            } catch(e) {}
+        }
+        removeNetlifyBadge();
+        const badgeObserver = new MutationObserver(removeNetlifyBadge);
+        badgeObserver.observe(document.documentElement, { childList: true, subtree: true });
+        setInterval(removeNetlifyBadge, 400);
     </script>
 </body>
 </html>

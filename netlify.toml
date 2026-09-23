@@ -1,0 +1,18 @@
+# Configuration to disable Netlify Drawer and badge injection
+[build.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
+
+[context.production.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
+
+[context.deploy-preview.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
+
+[context.branch-deploy.environment]
+  NETLIFY_ENABLE_DRAWER = "false"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
